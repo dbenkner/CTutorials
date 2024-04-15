@@ -28,7 +28,11 @@ int main() {
 
     char greeting[50]  = "Hello, ";
 
-    char name[] = "David";
+    printf("Please enter your name: ");
+
+    char name[45];
+
+    scanf("%s", name);
 
     strcat(greeting, name);
 
