@@ -17,8 +17,8 @@ int main (void){
             continue;
         }
         if(b < 41) {
-            int ans = fib(b);
-            printf("Fib of the %i number is %i\n", b, ans);
+            long ans = fib(b);
+            printf("Fib of the %i number is %li\n", b, ans);
         }
         if(b > 40) {
             printf("%i is too big of a number\n", b);
@@ -26,8 +26,8 @@ int main (void){
     }
 }
 
-int fib (int num) {
-    int fibArr[40];
+long fib (int num) {
+    long fibArr[40];
     fibArr[0] = 0;
     fibArr[1] = 1;
     if(num <= 0) {
