@@ -1,17 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main (void){
-    int tot = 10;
-    int ans = fib(tot);
-
-    printf("Fib of the %i number is %i\n", tot, ans);
+    char a[2];
+    int b;
+    while(tolower(a[0]) != 'q')
+    {
+        printf("Please enter a number smaller than 41\n");
+        scanf(" %s", &a);
+        if(tolower(a[0]) == 'q') {
+            break;
+        }
+        b = atoi(a);
+        if(b <= 0) {
+            printf("%s is not a valid input\n", a);
+            continue;
+        }
+        if(b < 41) {
+            int ans = fib(b);
+            printf("Fib of the %i number is %i\n", b, ans);
+        }
+        if(b > 40) {
+            printf("%i is too big of a number\n", b);
+        }
+    }
 }
-
 
 int fib (int num) {
     int fibArr[40];
     fibArr[0] = 0;
     fibArr[1] = 1;
+    if(num <= 0) {
+        return 0;
+    }
     for(int i = 2; i < num; i++) {
         fibArr[i] = fibArr[i-1] + fibArr[i-2];
     }
